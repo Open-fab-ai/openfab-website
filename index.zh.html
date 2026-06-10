@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OpenFab — 自然语言输入，可信软件输出</title>
+<meta name="description" content="OpenFab 是面向 AI 编写软件时代的开放、中立软件 fab：自然语言输入，可信软件输出。每一件制品都带有可复现构建、签名溯源（signed provenance）与 AI/人类作者归属，运行在可替换的智能体基座（base）与代码托管平台（forge）之上。基于 SLSA、in-toto、Sigstore、DID 构建。" />
+<meta name="theme-color" content="#070b14" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<meta property="og:title" content="OpenFab — 从自然语言制造可信软件" />
+<meta property="og:description" content="面向 AI 编写软件时代的开放、中立 fab。可复现构建 + 签名溯源 + AI/人类归属，运行在可替换的 base 与 forge 之上。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://open-fab.ai" />
+<meta property="og:image" content="https://open-fab.ai/assets/img/openfab-ui.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">⚙</span>
+      <span class="brand-name">Open<span class="accent">Fab</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#problem">问题</a>
+      <a href="#how">工作原理</a>
+      <a href="#trust">信任</a>
+      <a href="#architecture">架构</a>
+      <a href="#ecosystem">生态</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="lang-switch" href="index.html" hreflang="en" title="Switch to English">🌐 EN</a>
+      <a class="btn ghost sm" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary sm" href="#start">开始使用</a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">开放 · 中立 · 跨 FORGE · APACHE-2.0</div>
+      <h1>自然语言输入。<br /><span class="grad">可信软件</span>输出。</h1>
+      <p class="lede">
+        AI 如今编写着世界上越来越多的代码——但软件供应链的前提假设仍是"由人编写、以人的速度、
+        经人审查"。<strong>OpenFab 正是弥合这一鸿沟的 fab（软件工厂）：</strong>它产出的每一件制品
+        都带有<strong>可复现构建</strong>、<strong>签名溯源（signed provenance）</strong>与
+        <strong>AI/人类作者归属</strong>，运行在可替换的智能体基座（base）与可替换的代码托管平台
+        （forge）之上，并由中立机构治理。
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#start">开始使用</a>
+        <a class="btn ghost" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">在 GitHub 查看 ↗</a>
+      </div>
+      <div class="hero-meta">
+        <span>⬡ 基于开放标准构建</span>
+        <span>◆ 单一静态二进制 · 主权可控</span>
+        <span>✦ 用 fab 构建 fab</span>
+      </div>
+    </div>
+    <div class="hero-shot reveal">
+      <div class="shot-frame">
+        <div class="shot-bar"><i></i><i></i><i></i><span>open-fab.ai · 可信软件 fab</span></div>
+        <img src="assets/img/openfab-ui.png" alt="OpenFab 网页界面——自然语言进、可信工作流、签名溯源出" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STANDARDS BAR ============ -->
+<section class="standards">
+  <div class="container">
+    <p class="standards-label">组合成熟的开放标准——而非重复造轮子</p>
+    <div class="standards-row">
+      <span>SLSA</span><span>in-toto</span><span>Sigstore</span><span>C2PA</span>
+      <span>DID</span><span>SPDX</span><span>OPA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">问题</div>
+      <h2>AI 在写代码，但信任模型已经失效。</h2>
+      <p class="section-sub">
+        当智能体以机器规模产出变更时，决定你能否信任它的那些问题，突然变得无人能答——
+        而监管却要求更多的证明。
+      </p>
+    </div>
+    <div class="grid-4">
+      <div class="card reveal">
+        <div class="card-ic">？</div>
+        <h3>谁写的？</h3>
+        <p>哪个模型、哪个智能体身份、出自哪条指令？作者归属已变得不透明。</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic">⚖</div>
+        <h3>谁来负责？</h3>
+        <p>是否真有责任人批准过——还是因为测试碰巧通过就合并了？</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic">✓</div>
+        <h3>是否满足契约？</h3>
+        <p>"看起来对"和"测试通过"都不等于"做到了所要求的"。意图很少被真正记录。</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic">⟳</div>
+        <h3>谁能验证它？</h3>
+        <p>独立地、事后地、且无需信任产出它的工具？通常做不到。</p>
+      </div>
+    </div>
+    <div class="pull reveal">
+      结果是一道<strong>信任鸿沟</strong>：更多的代码、更快的速度、更不可问责的作者、更严格的
+      法规——欧盟<strong>《网络韧性法案》(EU CRA)</strong>、<strong>SLSA</strong>、供应链强制要求
+      ——却没有可移植的方式去证明其中任何一点。与此同时，AI 编程正被整合进<strong>封闭平台</strong>，
+      把你锁定到某一家的智能体与某一个 forge。
+    </div>
+  </div>
+</section>
+
+<!-- ============ GAP / SOLUTION INTRO ============ -->
+<section class="section alt" id="solution">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">空白</div>
+      <h2>零件都在，缺的是集成。</h2>
+      <p class="section-sub">
+        开放生态已经产出了出色的基础组件——用于溯源、签名、身份、SBOM、策略、智能体与 forge。
+        缺的是把这些零件变成"保证"的那一层：一个开放、<strong>中立</strong>的 fab，自然语言进、
+        可信软件出，且其溯源是<strong>可移植的</strong>、<strong>AI 感知的</strong>、
+        <strong>端到端的</strong>。
+      </p>
+    </div>
+    <div class="split reveal">
+      <div class="split-col">
+        <div class="split-tag bad">今天的 AI 编程工具</div>
+        <ul class="ticks bad">
+          <li>为<b>生成速度</b>优化</li>
+          <li>作者不透明，溯源不可移植</li>
+          <li>锁定单一智能体 + 单一 forge</li>
+          <li>"测试通过" ≠ 可问责、可验证的发布</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <div class="split-tag bad">今天的供应链工具</div>
+        <ul class="ticks bad">
+          <li>保护的是<b>人编写</b>的构建</li>
+          <li>没有对 AI 作者的一等支持</li>
+          <li>没有人在环的意图门禁</li>
+          <li>事后逐平台地外挂</li>
+        </ul>
+      </div>
+      <div class="split-col hi">
+        <div class="split-tag good">OpenFab</div>
+        <ul class="ticks good">
+          <li>闭环：<b>人类问责下的 AI 作者</b></li>
+          <li>可移植、forge 中立、AI 感知的溯源</li>
+          <li>可替换 base + forge——<b>无锁定</b></li>
+          <li>端到端签名并门控的可验证契约</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">工作原理</div>
+      <h2>规格循环（spec cycle）——一句话变成可信软件</h2>
+      <p class="section-sub">
+        每一步都是一次带溯源 trailer 的<strong>签名 git 提交</strong>。完整轨迹是纯 git + JSON、
+        提交在仓库内——可被任意 forge 上的第三方工具审计与验证。
+      </p>
+    </div>
+    <ol class="cycle reveal">
+      <li><span class="cn">1</span><h4>意图 Intent</h4><p>你用平白的语言描述需求。这是你唯一需要提供的东西。</p></li>
+      <li><span class="cn">2</span><h4>规格 Spec</h4><p>LLM 撰写带版本、机器可校验的规格<em>及其</em>验收标准——即契约。</p></li>
+      <li><span class="cn">3</span><h4>生成 Generate</h4><p>智能体基座编写代码；作者身份以 DID、模型与 prompt 哈希记录。</p></li>
+      <li><span class="cn">4</span><h4>验证 Verify</h4><p>验收标准在策略门控的沙箱中重跑。绝不放水。</p></li>
+      <li><span class="cn">5</span><h4>签名 Sign</h4><p>in-toto/SLSA 证明 + SBOM，经签名；逐文件 AI/人类归属。</p></li>
+      <li><span class="cn">6</span><h4>门禁 Gate</h4><p>在 N-of-M 人工签署之前，合并被<em>阻断</em>。绝不自我批准。</p></li>
+      <li><span class="cn">7</span><h4>复现 Reproduce</h4><p>任何人都能重新验证签名、确认源码逐字节一致、并重跑验收——无需 OpenFab。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ TRUST STORY ============ -->
+<section class="section alt" id="trust">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">让信任看得见</div>
+      <h2>每一项价值主张，都是一件你能查验的制品</h2>
+      <p class="section-sub">在网页界面里点开一次真实运行——这些正是第三方可独立验证的同一批制品。</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">身份与归属</div>
+        <h3>谁、出自哪条指令构建</h3>
+        <p><code>openfab/generation</code> 这一 in-toto predicate 记录智能体 <strong>DID</strong>、base · model、参数、<strong>prompt 哈希</strong>，以及每个变更文件/行区间，并打上 <code>author: ai | human</code> 标签。人工签署作为 <code>human</code> 作者身份附加并签名。</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/workflow-generate.png" alt="生成面板——智能体 DID、模型、prompt SHA-256、逐文件 ai/human 归属" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">可复现性</div>
+        <h3>验证，而非凭信</h3>
+        <p>"验收"是"完成"的机器可校验定义——每条标准是一条必须以 0 退出的 shell 命令，在沙箱中由任何人随时<strong>重跑</strong>。复现会确认提交的源码与签名摘要<strong>逐字节一致</strong>。</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/workflow-verify.png" alt="验证面板——验收契约在沙箱中执行" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">签名溯源</div>
+        <h3>in-toto / SLSA，已签名并锁定</h3>
+        <p>一份 in-toto/SLSA 证明，由 fab 的 <code>did:key</code> 以 ed25519 在规范化 JSON 上签名，带 <code>payload_sha256</code> 防篡改锁，并为每个人工签署使用独立的 <code>did:key</code>。可移植的 JSON，提交在仓库内。</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/tab-provenance.png" alt="溯源标签页——完整的签名 in-toto/SLSA 证明" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">可审计性 · EU CRA / SLSA</div>
+        <h3>每个动作都是一次签名提交</h3>
+        <p>AI 的作者身份与每次人工签署，都是一次带溯源 trailer 的<strong>签名 git 提交</strong>，合并由 N-of-M 门控。轨迹是纯 git + JSON，第三方工具可在任意 forge 上原生渲染与验证。</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/tab-audit-trail.png" alt="审计轨迹标签页——带溯源 trailer 的签名提交图" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">人在环 · 声誉</div>
+        <h3>设计即问责，可累积的声望</h3>
+        <p>门禁仅在预先批准的维护者名单<strong> N-of-M 签署</strong>后才放行。<strong>声誉完全由签名证明投影而来</strong>——从可验证的工作中赢得，而非在旁路数据库里自封。</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/maintainers-reputation.png" alt="维护者名单与由证明投影出的声誉" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">架构</div>
+      <h2>中立源自构造——端口与适配器</h2>
+      <p class="section-sub">
+        围绕稳定 Core 的两条正交可插拔轴。替换智能体 base 或 git forge，都无需触碰信任机制。
+        没有任何一家的智能体、forge 或许可证能挟持本项目。
+      </p>
+    </div>
+    <div class="arch reveal">
+      <img src="assets/architecture.svg" alt="OpenFab 工作流与可插拔架构——围绕稳定 Core 的可替换 Base 与 Forge" />
+    </div>
+    <div class="matrix reveal">
+      <div class="matrix-col">
+        <h4>智能体基座 <span>×5 · BasePort</span></h4>
+        <div class="chips">
+          <span class="chip">claude <i>原生</i></span>
+          <span class="chip">AgentScope</span>
+          <span class="chip">HiClaw</span>
+          <span class="chip">agent-chat</span>
+          <span class="chip">OpenHands</span>
+        </div>
+        <p>其运行时已连接则为原生（native），否则经 LLM 后端桥接（bridged）——在溯源中如实标注。</p>
+      </div>
+      <div class="matrix-col">
+        <h4>Forge <span>×4 · ForgePort</span></h4>
+        <div class="chips">
+          <span class="chip">GitHub</span>
+          <span class="chip">Forgejo</span>
+          <span class="chip">Gitea</span>
+          <span class="chip">GitCode</span>
+        </div>
+        <p>有凭据则为线上（live），否则为离线本地实例，仍能证明可移植的仓库内溯源。</p>
+      </div>
+      <div class="matrix-col">
+        <h4>Core <span>护城河</span></h4>
+        <div class="chips">
+          <span class="chip">spec cycle</span>
+          <span class="chip">did:key</span>
+          <span class="chip">溯源</span>
+          <span class="chip">信任门禁</span>
+          <span class="chip">SBOM</span>
+          <span class="chip">声誉</span>
+        </div>
+        <p>与 base/forge 无关。无论底层运行什么，保证都相同。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELF-HOSTING ============ -->
+<section class="section alt selfhost" id="selfhost">
+  <div class="container narrow reveal">
+    <div class="kicker center">递归式设计</div>
+    <h2 class="center">用 fab 构建 fab</h2>
+    <p class="center big">
+      OpenFab 开发 OpenFab——每一次自我变更都由项目自身的测试验证、带溯源签名，并经同一套
+      N-of-M 人工信任模型门控。它自身的溯源轨迹就是最好的样板。最敏感的组件——信任门禁——
+      <strong>始终有版本、绝不热加载、绝不自我批准。</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="section" id="who">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">适用人群</div>
+      <h2>让信任随代码一起流动</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><h3>交付 AI 代码的企业</h3><p>满足 CRA / SLSA / 审计的溯源与签名证明——无需把团队拖回纯人工审查。</p></div>
+      <div class="card reveal"><h3>监管者与审计方</h3><p>可移植、可第三方验证的证据：谁、出自哪条指令构建、由谁批准。</p></div>
+      <div class="card reveal"><h3>开源维护者</h3><p>面向不可信或 AI 生成贡献的 N-of-M 门禁，以及从签名工作中赢得的声誉。</p></div>
+      <div class="card reveal"><h3>主权与隔离网环境</h3><p>单一静态二进制、可离线验证身份、无强制云服务。</p></div>
+      <div class="card reveal"><h3>更广的生态</h3><p>一个中立的标准<em>与</em>参考实现——而非 N 个互不兼容的封闭平台。</p></div>
+      <div class="card reveal"><h3>平台与工具构建者</h3><p>把你的智能体或 forge 接到稳定接口上，即可继承整条信任流水线。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOSYSTEM / CONTRIBUTE ============ -->
+<section class="section alt" id="ecosystem">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">生态与治理</div>
+      <h2>一层薄薄的中立层——接缝处就是邀请函</h2>
+      <p class="section-sub">
+        采用 OpenFab 是叠加，而非迁移。生态通过贡献适配器、策略与一致性规范而生长——
+        每一个都在稳定接口之后，都无需改动可信 Core。
+      </p>
+    </div>
+    <div class="grid-4">
+      <div class="card reveal"><div class="card-ic">⬡</div><h3>Base 适配器</h3><p>在 <code>BasePort</code> 之后接入新的智能体运行时。</p></div>
+      <div class="card reveal"><div class="card-ic">⑂</div><h3>Forge 适配器</h3><p>在 <code>ForgePort</code> 之后增加 git 托管平台；溯源保持可移植。</p></div>
+      <div class="card reveal"><div class="card-ic">▤</div><h3>策略</h3><p>Rego 信任规则——白名单、N-of-M、沙箱边界。</p></div>
+      <div class="card reveal"><div class="card-ic">✔</div><h3>一致性规范</h3><p>为你的领域定义并认证"可信"的含义。</p></div>
+    </div>
+    <div class="gov reveal">
+      <a class="gov-badge" href="https://aosf.ai" target="_blank" rel="noopener" title="AOSF — aosf.ai">AOSF</a>
+      <p>
+        由 <strong><a class="inline-link" href="https://aosf.ai" target="_blank" rel="noopener">AOSF (aosf.ai)</a></strong>
+        作为<strong>中立基金会</strong>进行管理，采用 <strong>Apache-2.0</strong> 许可。中立是一种特性：
+        因为 base 与 forge 可替换，无论底层是谁的基础设施，OpenFab 给出的保证都相同。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GET STARTED / CTA ============ -->
+<section class="cta" id="start">
+  <div class="cta-glow"></div>
+  <div class="container narrow reveal">
+    <div class="kicker center">状态：v0.2 参考实现，今天即可运行</div>
+    <h2 class="center">制造一些可信的东西</h2>
+    <p class="center">克隆它，运行网页界面，看着一句话变成签名、归属、门控后的软件。</p>
+    <div class="codeblock">
+      <code><span class="c-cmt"># 克隆这个开放、中立的 fab</span>
+git clone https://github.com/open-fab-ai/openfab
+cd openfab
+demo/run_web_demo.sh   <span class="c-cmt"># 构建并在 :8787 打开网页界面</span></code>
+    </div>
+    <div class="cta-actions">
+      <a class="btn primary" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">在 GitHub 加星 ↗</a>
+      <a class="btn ghost" href="https://github.com/open-fab-ai/openfab/blob/main/docs/OpenFab_Overview.md" target="_blank" rel="noopener">阅读总览</a>
+    </div>
+    <p class="fineprint">
+      每个较轻量的 v0.1/v0.2 选择（did:key、门控主机沙箱、SPDX-lite）都标注了其生产级替换
+      （Sigstore、Podman/gVisor、Syft）——绝不夸大。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">⚙</span>
+      <span class="brand-name">Open<span class="accent">Fab</span></span>
+      <p>开源软件 fab：自然语言进，可信软件出。</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h5>项目</h5>
+        <a href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/open-fab-ai/openfab/blob/main/docs/OpenFab_Overview.md" target="_blank" rel="noopener">总览 Overview</a>
+        <a href="https://github.com/open-fab-ai/openfab/blob/main/docs/OpenFab_MVP_Design_and_PRD.md" target="_blank" rel="noopener">设计与 PRD</a>
+      </div>
+      <div>
+        <h5>标准</h5>
+        <a href="https://slsa.dev" target="_blank" rel="noopener">SLSA</a>
+        <a href="https://in-toto.io" target="_blank" rel="noopener">in-toto</a>
+        <a href="https://www.sigstore.dev" target="_blank" rel="noopener">Sigstore</a>
+        <a href="https://www.w3.org/TR/did-core/" target="_blank" rel="noopener">DID</a>
+      </div>
+      <div>
+        <h5>治理</h5>
+        <a href="https://aosf.ai" target="_blank" rel="noopener">AOSF</a>
+        <a href="https://github.com/open-fab-ai/openfab/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <span>© 2026 The OpenFab Authors · Apache-2.0</span>
+    <span>open-fab.ai</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
