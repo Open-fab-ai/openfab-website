@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OpenFab — natural language in, trustworthy software out</title>
+<meta name="description" content="OpenFab is an open, neutral software fab for the age of AI-authored code: natural language in, trustworthy software out. Every artifact carries a reproducible build, signed provenance, and AI/Human attribution — on a swappable agent base and forge. Built on SLSA, in-toto, Sigstore, and DID." />
+<meta name="theme-color" content="#070b14" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<!-- Open Graph / social -->
+<meta property="og:title" content="OpenFab — trustworthy software, fabricated from natural language" />
+<meta property="og:description" content="An open, neutral fab for the age of AI-authored software. Reproducible build + signed provenance + AI/Human attribution, on a swappable base and forge." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://open-fab.ai" />
+<meta property="og:image" content="https://open-fab.ai/assets/img/openfab-ui.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">⚙</span>
+      <span class="brand-name">Open<span class="accent">Fab</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#how">How it works</a>
+      <a href="#trust">Trust</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#ecosystem">Ecosystem</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn ghost sm" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary sm" href="#start">Get started</a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <div class="eyebrow">OPEN · NEUTRAL · CROSS-FORGE · APACHE-2.0</div>
+      <h1>Natural language in.<br /><span class="grad">Trustworthy software</span> out.</h1>
+      <p class="lede">
+        AI now writes a fast-growing share of the world's code — but the software supply
+        chain assumes a human author, working at human speed, under human review.
+        <strong>OpenFab is the fab that closes the gap:</strong> every artifact it produces
+        carries a <strong>reproducible build</strong>, <strong>signed provenance</strong>,
+        and <strong>AI/Human attribution</strong> — on a swappable agent base and a swappable
+        forge, under neutral governance.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#start">Get started</a>
+        <a class="btn ghost" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <div class="hero-meta">
+        <span>⬡ Built on open standards</span>
+        <span>◆ Single static binary · sovereign</span>
+        <span>✦ The fab builds the fab</span>
+      </div>
+    </div>
+    <div class="hero-shot reveal">
+      <div class="shot-frame">
+        <div class="shot-bar"><i></i><i></i><i></i><span>open-fab.ai · the trusted software fab</span></div>
+        <img src="assets/img/openfab-ui.png" alt="The OpenFab web UI — natural language in, live trust workflow, signed provenance out" loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STANDARDS BAR ============ -->
+<section class="standards">
+  <div class="container">
+    <p class="standards-label">Composes mature open standards — it doesn't reinvent them</p>
+    <div class="standards-row">
+      <span>SLSA</span><span>in-toto</span><span>Sigstore</span><span>C2PA</span>
+      <span>DID</span><span>SPDX</span><span>OPA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">The problem</div>
+      <h2>AI writes the code. The trust model broke.</h2>
+      <p class="section-sub">
+        When an agent emits a change at machine scale, the questions that decide whether you
+        can trust it suddenly have no answer — exactly as regulators demand more proof.
+      </p>
+    </div>
+    <div class="grid-4">
+      <div class="card reveal">
+        <div class="card-ic">？</div>
+        <h3>Who wrote this?</h3>
+        <p>Which model, which agent identity, from which exact instruction? Authorship has gone opaque.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic">⚖</div>
+        <h3>Who's accountable?</h3>
+        <p>Did a responsible human actually approve it — or did it merge because the tests happened to pass?</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic">✓</div>
+        <h3>Does it meet a contract?</h3>
+        <p>"Looks right" and "tests are green" are not "does what was asked." Intent is rarely captured.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-ic">⟳</div>
+        <h3>Can anyone verify it?</h3>
+        <p>Independently, later, without trusting the tool that produced it? Usually not.</p>
+      </div>
+    </div>
+    <div class="pull reveal">
+      The result is a <strong>trust gap</strong>: more code, written faster, by less
+      accountable authors, under stricter rules — the <strong>EU Cyber Resilience Act</strong>,
+      <strong>SLSA</strong>, supply-chain mandates — with no portable way to prove any of it.
+      Meanwhile AI coding is consolidating into <strong>closed platforms</strong> that lock you
+      to one vendor's agent and one forge.
+    </div>
+  </div>
+</section>
+
+<!-- ============ GAP / SOLUTION INTRO ============ -->
+<section class="section alt" id="solution">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">The gap</div>
+      <h2>The pieces exist. The integration doesn't.</h2>
+      <p class="section-sub">
+        The open ecosystem has produced remarkable primitives — for provenance, signing,
+        identity, SBOMs, policy, agents, and forges. What's missing is the thing that turns
+        the parts into a guarantee: a single, open, <strong>neutral</strong> fab that takes
+        natural language in and emits trustworthy software out, with provenance that's
+        <strong>portable</strong>, <strong>AI-aware</strong>, and <strong>end-to-end</strong>.
+      </p>
+    </div>
+    <div class="split reveal">
+      <div class="split-col">
+        <div class="split-tag bad">Today's AI coding tools</div>
+        <ul class="ticks bad">
+          <li>Optimize for <b>speed of generation</b></li>
+          <li>Opaque authorship, no portable provenance</li>
+          <li>Lock-in to one agent + one forge</li>
+          <li>"Tests pass" ≠ accountable, verifiable release</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <div class="split-tag bad">Today's supply-chain tools</div>
+        <ul class="ticks bad">
+          <li>Secure <b>human-authored</b> builds</li>
+          <li>No first-class notion of AI authorship</li>
+          <li>No human-in-the-loop intent gate</li>
+          <li>Bolted on after the fact, per platform</li>
+        </ul>
+      </div>
+      <div class="split-col hi">
+        <div class="split-tag good">OpenFab</div>
+        <ul class="ticks good">
+          <li>Closes the loop: <b>AI authorship under human accountability</b></li>
+          <li>Portable, forge-neutral, AI-aware provenance</li>
+          <li>Swappable base + forge — <b>no lock-in</b></li>
+          <li>A verifiable contract, signed and gated end-to-end</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">How it works</div>
+      <h2>The spec cycle — a sentence becomes trustworthy software</h2>
+      <p class="section-sub">
+        Every step is a <strong>signed git commit carrying provenance trailers</strong>. The
+        full trail is plain git + JSON, committed in the repo — auditable and verifiable by
+        third-party tools on any forge.
+      </p>
+    </div>
+    <ol class="cycle reveal">
+      <li><span class="cn">1</span><h4>Intent</h4><p>You describe what you want in plain English. That's the only thing you supply.</p></li>
+      <li><span class="cn">2</span><h4>Spec</h4><p>The LLM authors a versioned, machine-checkable spec <em>and</em> its acceptance criteria — the contract.</p></li>
+      <li><span class="cn">3</span><h4>Generate</h4><p>An agent base writes the code; authorship recorded by DID, model, and prompt hash.</p></li>
+      <li><span class="cn">4</span><h4>Verify</h4><p>Acceptance criteria re-run in a policy-gated sandbox. No vacuous passes.</p></li>
+      <li><span class="cn">5</span><h4>Sign</h4><p>An in-toto/SLSA attestation + SBOM, signed; per-file AI/Human attribution.</p></li>
+      <li><span class="cn">6</span><h4>Gate</h4><p>Merge is <em>blocked</em> until N-of-M human maintainers sign off. Never self-approved.</p></li>
+      <li><span class="cn">7</span><h4>Reproduce</h4><p>Anyone re-verifies signatures, confirms bit-identical source, and re-runs acceptance — without OpenFab.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ TRUST STORY ============ -->
+<section class="section alt" id="trust">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">The trust story, made concrete</div>
+      <h2>Every value proposition is an artifact you can inspect</h2>
+      <p class="section-sub">Click through a real run in the web UI — the same artifacts a third party can verify independently.</p>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">Identity &amp; attribution</div>
+        <h3>Who built it, from what instruction</h3>
+        <p>The <code>openfab/generation</code> in-toto predicate records the agent <strong>DID</strong>, base · model, parameters, the <strong>prompt hash</strong>, and every changed file/line range tagged <code>author: ai | human</code>. Human sign-offs are appended as <code>human</code> authorship with signatures.</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/workflow-generate.png" alt="Generate panel — agent DID, model, prompt SHA-256, per-file ai/human attribution" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">Reproducibility</div>
+        <h3>Verification, not faith</h3>
+        <p>"Acceptance" is the machine-checkable definition of done — each criterion a shell command that must exit 0, <strong>re-run in the sandbox</strong> by anyone, anytime. Reproduce confirms the committed source is <strong>bit-identical</strong> to the signed digests.</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/workflow-verify.png" alt="Verify panel — the acceptance contract executed in the sandbox" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">Signed provenance</div>
+        <h3>in-toto / SLSA, signed and pinned</h3>
+        <p>An in-toto/SLSA attestation, signed (ed25519 over canonical JSON) by the fab's <code>did:key</code>, with a <code>payload_sha256</code> tamper-pin and a distinct <code>did:key</code> per human sign-off. Portable JSON, committed in-repo.</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/tab-provenance.png" alt="Provenance tab — the full signed in-toto/SLSA attestation" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reverse reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">Auditability · EU CRA / SLSA</div>
+        <h3>Every action is a signed commit</h3>
+        <p>The AI's authorship and each human sign-off is a <strong>signed git commit carrying provenance trailers</strong>, the merge gated on N-of-M. The trail is plain git + JSON, so third-party tools render and verify it natively on any forge.</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/tab-audit-trail.png" alt="Audit trail tab — signed commit graph with provenance trailers" loading="lazy" /></div>
+    </div>
+
+    <div class="feature reveal">
+      <div class="feature-text">
+        <div class="feat-kicker">Human-in-the-loop · reputation</div>
+        <h3>Accountability by design, standing that compounds</h3>
+        <p>The gate releases only on <strong>N-of-M sign-off</strong> from a pre-approved maintainer allowlist. <strong>Reputation is projected purely from signed attestations</strong> — standing earned from verifiable work, not asserted in a side database.</p>
+      </div>
+      <div class="feature-shot"><img src="assets/img/maintainers-reputation.png" alt="Maintainers allowlist and reputation projected from attestations" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Architecture</div>
+      <h2>Neutral by construction — ports &amp; adapters</h2>
+      <p class="section-sub">
+        Two orthogonal pluggable axes around a stable Core. Swap the agent base or the git
+        forge without touching the trust machinery. No single vendor's agent, forge, or
+        license can capture the project.
+      </p>
+    </div>
+    <div class="arch reveal">
+      <img src="assets/architecture.svg" alt="OpenFab workflow and pluggable architecture — swappable Base and Forge around a stable Core" />
+    </div>
+    <div class="matrix reveal">
+      <div class="matrix-col">
+        <h4>Agent bases <span>×5 · BasePort</span></h4>
+        <div class="chips">
+          <span class="chip">claude <i>native</i></span>
+          <span class="chip">AgentScope</span>
+          <span class="chip">HiClaw</span>
+          <span class="chip">agent-chat</span>
+          <span class="chip">OpenHands</span>
+        </div>
+        <p>Native if its runtime is connected, else bridged through the LLM backend — badged honestly in the provenance.</p>
+      </div>
+      <div class="matrix-col">
+        <h4>Forges <span>×4 · ForgePort</span></h4>
+        <div class="chips">
+          <span class="chip">GitHub</span>
+          <span class="chip">Forgejo</span>
+          <span class="chip">Gitea</span>
+          <span class="chip">GitCode</span>
+        </div>
+        <p>Live with credentials, else an offline local instance that still proves portable, in-repo provenance.</p>
+      </div>
+      <div class="matrix-col">
+        <h4>Core <span>the moat</span></h4>
+        <div class="chips">
+          <span class="chip">spec cycle</span>
+          <span class="chip">did:key</span>
+          <span class="chip">provenance</span>
+          <span class="chip">trust gate</span>
+          <span class="chip">SBOM</span>
+          <span class="chip">reputation</span>
+        </div>
+        <p>Base- and forge-independent. Identical guarantees regardless of what runs underneath.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELF-HOSTING ============ -->
+<section class="section alt selfhost" id="selfhost">
+  <div class="container narrow reveal">
+    <div class="kicker center">Recursive by design</div>
+    <h2 class="center">The fab builds the fab</h2>
+    <p class="center big">
+      OpenFab develops OpenFab — each self-change verified by the project's own tests,
+      signed with provenance, and gated by the same N-of-M human trust model. Its own
+      provenance trail is the reference showcase. The most sensitive component, the trust
+      gate, is <strong>always versioned, never hot-loaded, never self-approved.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="section" id="who">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Who it's for</div>
+      <h2>Trust that travels with the code</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Enterprises shipping AI code</h3><p>Provenance and signed attestation that satisfy CRA / SLSA / audit — without slowing teams to human-only review.</p></div>
+      <div class="card reveal"><h3>Regulators &amp; auditors</h3><p>Portable, third-party-verifiable evidence of who built what, from what instruction, approved by whom.</p></div>
+      <div class="card reveal"><h3>Open-source maintainers</h3><p>An N-of-M gate for untrusted or AI-generated contributions, and reputation earned from signed work.</p></div>
+      <div class="card reveal"><h3>Sovereign &amp; air-gapped</h3><p>A single static binary, offline-verifiable identity, no mandatory cloud service.</p></div>
+      <div class="card reveal"><h3>The broader ecosystem</h3><p>A neutral standard <em>and</em> a reference implementation — instead of N incompatible closed platforms.</p></div>
+      <div class="card reveal"><h3>Platform &amp; tool builders</h3><p>Plug your agent or forge into a stable interface and inherit the whole trust pipeline.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ECOSYSTEM / CONTRIBUTE ============ -->
+<section class="section alt" id="ecosystem">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Ecosystem &amp; governance</div>
+      <h2>A thin, neutral layer — the seams are the invitation</h2>
+      <p class="section-sub">
+        Adopting OpenFab is additive, not a migration. The ecosystem grows by contributing
+        adapters, policies, and conformance profiles — each behind a stable interface, none
+        requiring changes to the trusted Core.
+      </p>
+    </div>
+    <div class="grid-4">
+      <div class="card reveal"><div class="card-ic">⬡</div><h3>Base adapters</h3><p>Bring a new agent runtime behind <code>BasePort</code>.</p></div>
+      <div class="card reveal"><div class="card-ic">⑂</div><h3>Forge adapters</h3><p>Add a git host behind <code>ForgePort</code>; provenance stays portable.</p></div>
+      <div class="card reveal"><div class="card-ic">▤</div><h3>Policies</h3><p>Rego trust rules — allowlists, N-of-M, sandbox boundaries.</p></div>
+      <div class="card reveal"><div class="card-ic">✔</div><h3>Conformance profiles</h3><p>Define and certify what "trustworthy" means for your domain.</p></div>
+    </div>
+    <div class="gov reveal">
+      <div class="gov-badge">AOSF</div>
+      <p>
+        Stewarded by the <strong>AOSF (aosf.ai)</strong> as a <strong>neutral foundation</strong>,
+        licensed <strong>Apache-2.0</strong>. Neutrality is a feature: because the base and forge
+        are swappable, the guarantee OpenFab makes is the same regardless of whose infrastructure
+        runs underneath.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GET STARTED / CTA ============ -->
+<section class="cta" id="start">
+  <div class="cta-glow"></div>
+  <div class="container narrow reveal">
+    <div class="kicker center">Status: v0.2 reference implementation, runnable today</div>
+    <h2 class="center">Fabricate something trustworthy</h2>
+    <p class="center">Clone it, run the web UI, and watch a sentence become signed, attributed, gated software.</p>
+    <div class="codeblock">
+      <code><span class="c-cmt"># clone the open, neutral fab</span>
+git clone https://github.com/open-fab-ai/openfab
+cd openfab
+demo/run_web_demo.sh   <span class="c-cmt"># builds + opens the web UI on :8787</span></code>
+    </div>
+    <div class="cta-actions">
+      <a class="btn primary" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">Star on GitHub ↗</a>
+      <a class="btn ghost" href="https://github.com/open-fab-ai/openfab/blob/main/docs/OpenFab_Overview.md" target="_blank" rel="noopener">Read the overview</a>
+    </div>
+    <p class="fineprint">
+      Every lighter v0.1/v0.2 choice (did:key, gated-host sandbox, SPDX-lite) names its
+      production swap (Sigstore, Podman/gVisor, Syft) — nothing is overstated.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">⚙</span>
+      <span class="brand-name">Open<span class="accent">Fab</span></span>
+      <p>An open-source software fab: natural language in, trustworthy software out.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h5>Project</h5>
+        <a href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/open-fab-ai/openfab/blob/main/docs/OpenFab_Overview.md" target="_blank" rel="noopener">Overview</a>
+        <a href="https://github.com/open-fab-ai/openfab/blob/main/OpenFab_MVP_Design_and_PRD.md" target="_blank" rel="noopener">Design &amp; PRD</a>
+      </div>
+      <div>
+        <h5>Standards</h5>
+        <a href="https://slsa.dev" target="_blank" rel="noopener">SLSA</a>
+        <a href="https://in-toto.io" target="_blank" rel="noopener">in-toto</a>
+        <a href="https://www.sigstore.dev" target="_blank" rel="noopener">Sigstore</a>
+        <a href="https://www.w3.org/TR/did-core/" target="_blank" rel="noopener">DID</a>
+      </div>
+      <div>
+        <h5>Governance</h5>
+        <a href="https://aosf.ai" target="_blank" rel="noopener">AOSF</a>
+        <a href="https://github.com/open-fab-ai/openfab/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <span>© 2026 The OpenFab Authors · Apache-2.0</span>
+    <span>open-fab.ai</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
