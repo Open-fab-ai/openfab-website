@@ -31,6 +31,7 @@
     <nav class="nav-links">
       <a href="#problem">Problem</a>
       <a href="#how">How it works</a>
+      <a href="#aibom">AI-BOM</a>
       <a href="#trust">Trust</a>
       <a href="#architecture">Architecture</a>
       <a href="#ecosystem">Ecosystem</a>
@@ -256,6 +257,41 @@
         <p>The gate releases only on <strong>N-of-M sign-off</strong> from a pre-approved maintainer allowlist. <strong>Reputation is projected purely from signed attestations</strong> — standing earned from verifiable work, not asserted in a side database.</p>
       </div>
       <div class="feature-shot"><img src="assets/img/maintainers-reputation.png" alt="Maintainers allowlist and reputation projected from attestations" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI-BOM / GENERATION PREDICATE ============ -->
+<section class="section alt" id="aibom">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">OpenFab's contribution</div>
+      <h2>The AI-BOM for AI-generated software</h2>
+      <p class="section-sub">
+        SBOM tells you <em>what's in</em> your software. <strong>OpenFab's AI-BOM tells you
+        who and what <em>wrote</em> it</strong> — human vs AI, which model, which prompt —
+        signed and verifiable on any forge. We <strong>define the open predicate</strong>
+        for how that bill of materials for generated code should look.
+      </p>
+    </div>
+    <div class="reveal" style="max-width:920px;margin:0 auto;background:rgba(255,255,255,.02);border:1px solid var(--line,#1e2a40);border-radius:16px;padding:26px 28px">
+      <div style="font:600 13px/1 ui-monospace,JetBrains Mono,monospace;color:var(--accent,#2dd4bf);letter-spacing:.04em;margin-bottom:14px">
+        openfab/generation · v0.1 &nbsp;—&nbsp; an in-toto predicate type
+      </div>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px 26px">
+        <li>🧬 <strong>Human-vs-AI authorship</strong> — per file &amp; line range</li>
+        <li>🤖 <strong>Model &amp; agent identity</strong> — which model wrote it</li>
+        <li>🔑 <strong>Prompt fingerprint</strong> — sha256 of the generation prompt</li>
+        <li>✅ <strong>The acceptance contract</strong> — the exact checks, embedded</li>
+        <li>🔏 <strong>Signatures &amp; N-of-M sign-off</strong> — did:key, ed25519</li>
+        <li>📦 <strong>Bound to file digests</strong> — tamper-evident, portable</li>
+      </ul>
+      <p style="margin:20px 0 0;color:var(--muted,#8b97a8);font-size:14.5px">
+        Built on <strong>in-toto / SLSA / Sigstore / DID</strong> — we don't reinvent the
+        envelope; we define the missing predicate for AI authorship, proposed as a neutral
+        open standard under AOSF. &nbsp;
+        <a href="/attestation/generation/v0.1/" style="color:var(--accent,#2dd4bf);white-space:nowrap">Read the spec →</a>
+      </p>
     </div>
   </div>
 </section>
