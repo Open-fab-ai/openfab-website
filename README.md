@@ -27,4 +27,4 @@ Pushed to `main` → GitHub Pages publishes automatically. The custom domain is 
 repo **Settings → Pages** and pinned by the `CNAME` file.
 
 The project itself lives at **[github.com/open-fab-ai/openfab](https://github.com/open-fab-ai/openfab)**.
-Apache-2.0 · Governance: AOSF.
+Apache-2.0 · vendor-neutral.
