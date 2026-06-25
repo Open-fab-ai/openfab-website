@@ -30,6 +30,7 @@
     <nav class="nav-links">
       <a href="#problem">问题</a>
       <a href="#how">工作原理</a>
+      <a href="#aibom">AI-BOM</a>
       <a href="#trust">信任</a>
       <a href="#architecture">架构</a>
       <a href="#ecosystem">生态</a>
@@ -251,6 +252,39 @@
         <p>门禁仅在预先批准的维护者名单<strong> N-of-M 签署</strong>后才放行。<strong>声誉完全由签名证明投影而来</strong>——从可验证的工作中赢得，而非在旁路数据库里自封。</p>
       </div>
       <div class="feature-shot"><img src="assets/img/maintainers-reputation.png" alt="维护者名单与由证明投影出的声誉" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI-BOM / GENERATION PREDICATE ============ -->
+<section class="section alt" id="aibom">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">OpenFab 的独特贡献 / Our contribution</div>
+      <h2>AI 生成软件的「AI-BOM」</h2>
+      <p class="section-sub">
+        SBOM 告诉你软件里<em>有什么</em>；<strong>OpenFab 的 AI-BOM 告诉你是谁、用什么
+        <em>写</em>的</strong>—— 人类还是 AI、哪个模型、什么提示词 —— 签名且可跨平台验证。
+        我们<strong>定义了开放预案（predicate）</strong>，规定 AI 生成代码的物料清单应当长什么样。
+      </p>
+    </div>
+    <div class="reveal" style="max-width:920px;margin:0 auto;background:rgba(255,255,255,.02);border:1px solid var(--line,#1e2a40);border-radius:16px;padding:26px 28px">
+      <div style="font:600 13px/1 ui-monospace,JetBrains Mono,monospace;color:var(--accent,#2dd4bf);letter-spacing:.04em;margin-bottom:14px">
+        openfab/generation · v0.1 &nbsp;—&nbsp; 一种 in-toto 预案类型 / predicate type
+      </div>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px 26px">
+        <li>🧬 <strong>人/AI 署名 (Human-vs-AI)</strong> —— 按文件与行范围</li>
+        <li>🤖 <strong>模型与智能体身份 (Model)</strong> —— 哪个模型所写</li>
+        <li>🔑 <strong>提示词指纹 (Prompt sha256)</strong> —— 生成提示的哈希</li>
+        <li>✅ <strong>验收契约 (Acceptance)</strong> —— 内嵌的精确检查</li>
+        <li>🔏 <strong>签名与 N-of-M 签核 (did:key)</strong> —— ed25519</li>
+        <li>📦 <strong>绑定文件摘要 (Digests)</strong> —— 防篡改、可移植</li>
+      </ul>
+      <p style="margin:20px 0 0;color:var(--muted,#8b97a8);font-size:14.5px">
+        基于 <strong>in-toto / SLSA / Sigstore / DID</strong> —— 我们不重造信封，只补上 AI
+        署名这块缺失的预案，并拟作为 AOSF 下的中立开放标准。&nbsp;
+        <a href="/attestation/generation/v0.1/" style="color:var(--accent,#2dd4bf);white-space:nowrap">阅读规范 / Read the spec →</a>
+      </p>
     </div>
   </div>
 </section>
