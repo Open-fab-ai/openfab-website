@@ -255,3 +255,10 @@ code { font-family: var(--mono); font-size: .9em; color: var(--green); backgroun
   .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 18px 28px; gap: 16px; }
   .cta h2 { font-size: 32px; }
 }
+
+/* OpenFab Web — browser section */
+.browser-steps { max-width: 640px; margin: 22px auto 6px; padding-left: 22px; display: grid; gap: 10px; }
+.browser-steps li { color: var(--muted, #8b97a8); line-height: 1.55; }
+.browser-steps li strong { color: var(--ink, #e7ecf3); }
+.cta-actions.center { justify-content: center; display: flex; }
+.fineprint.center { text-align: center; }

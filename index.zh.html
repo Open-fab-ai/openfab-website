@@ -30,6 +30,7 @@
     <nav class="nav-links">
       <a href="#problem">问题</a>
       <a href="#how">工作原理</a>
+      <a href="#browser">浏览器中运行</a>
       <a href="#aibom">AI-BOM</a>
       <a href="#trust">信任</a>
       <a href="#architecture">架构</a>
@@ -38,7 +39,7 @@
     <div class="nav-cta">
       <a class="lang-switch" href="index.html" hreflang="en" title="Switch to English">🌐 EN</a>
       <a class="btn ghost sm" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="btn primary sm" href="#start">开始使用</a>
+      <a class="btn primary sm" href="https://open-fab-ai.github.io/openfab/" target="_blank" rel="noopener">在线体验 ↗</a>
     </div>
     <button class="nav-burger" id="burger" aria-label="菜单">☰</button>
   </div>
@@ -61,7 +62,7 @@
         （forge）之上，并由中立机构治理。
       </p>
       <div class="hero-actions">
-        <a class="btn primary" href="#start">开始使用</a>
+        <a class="btn primary" href="https://open-fab-ai.github.io/openfab/" target="_blank" rel="noopener">▶ 在浏览器中体验 ↗</a>
         <a class="btn ghost" href="https://github.com/open-fab-ai/openfab" target="_blank" rel="noopener">在 GitHub 查看 ↗</a>
       </div>
       <div class="hero-meta">
@@ -396,6 +397,33 @@
         因为 base 与 forge 可替换，无论底层是谁的基础设施，OpenFab 给出的保证都相同。
       </p>
     </div>
+  </div>
+</section>
+
+<!-- ============ OPENFAB WEB — 浏览器中运行 ============ -->
+<section class="section" id="browser">
+  <div class="container narrow reveal">
+    <div class="kicker center">OpenFab Web · 完全在浏览器中运行</div>
+    <h2 class="center">亲眼见证"出证（attestation）"——无需安装</h2>
+    <p class="center">
+      打开应用，填入一个 LLM 提供商的密钥，然后用自然语言描述你想要的东西。整个 fab 都在
+      <strong>你的浏览器标签页内</strong>运行：它生成一个小型网页应用，运行其验收检查，并产出一份
+      <strong>已签名的 AI-BOM</strong>——你可以就地验证，或将代码与出证一次性推送到 GitHub。
+      <strong>你的 API 密钥永不离开浏览器。</strong>
+    </p>
+    <ol class="browser-steps">
+      <li><strong>打开</strong> <a href="https://open-fab-ai.github.io/openfab/" target="_blank" rel="noopener">open-fab-ai.github.io/openfab</a></li>
+      <li>在 ⚙ 设置中<strong>配置 LLM</strong>（OpenRouter 是最简单的免安装选项）</li>
+      <li><strong>描述一个应用</strong> → 看它生成、检查、签名、把关——全在客户端完成</li>
+      <li><strong>验证或发布</strong>——在标签页内复现证明，或推送到你的 forge</li>
+    </ol>
+    <div class="cta-actions center">
+      <a class="btn primary" href="https://open-fab-ai.github.io/openfab/" target="_blank" rel="noopener">▶ 启动 OpenFab Web ↗</a>
+    </div>
+    <p class="fineprint center">
+      生成的应用及其验收检查运行在受沙箱隔离、来源不透明（opaque-origin）的框架中——无法读取你的密钥。
+      真实的 Ed25519 签名（did:key）通过 WebCrypto 完成；无需服务器。
+    </p>
   </div>
 </section>
 
