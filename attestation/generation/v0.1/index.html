@@ -96,7 +96,8 @@
   </ul>
   <p>Normative guidance:</p>
   <ul>
-    <li>Implementations <b>SHOULD</b> emit an <code>Assisted-by: &lt;agent.id&gt;</code> trailer (Linux-kernel convention: <code>AGENT_NAME:MODEL_VERSION</code>, optionally followed by <code>[tool1] [tool2]</code>) in any commit containing AI-generated content covered by this predicate, with the identifier <b>byte-identical</b> to the predicate's <code>agent.id</code>.</li>
+    <li>Implementations <b>SHOULD</b> emit an <code>Assisted-by: &lt;agent.id&gt;</code> trailer (Linux-kernel convention: <code>AGENT_NAME:MODEL_VERSION</code>, optionally followed by a space-separated list of specialized analysis tools the agent used — the predicate's <code>agent.tools</code>, e.g. <code>Assisted-by: Claude:claude-3-opus coccinelle sparse</code>) in any commit containing AI-generated content covered by this predicate, with the identifier <b>byte-identical</b> to the predicate's <code>agent.id</code>.</li>
+    <li>When <b>multiple models</b> contributed to one change (e.g. one model authored the spec and another generated the code), emit <b>one <code>Assisted-by:</code> line per distinct model</b> — the kernel's multi-model rule.</li>
     <li>Implementations <b>SHOULD NOT</b> use <code>Co-authored-by:</code> for AI involvement — it implies authorship, which copyright law reserves for human creative activity.</li>
     <li>Verifiers <b>MAY</b> cross-check trailer vs. attestation: a mismatch, or a trailer with no corresponding attestation where policy expects one, is itself a review signal.</li>
   </ul>
